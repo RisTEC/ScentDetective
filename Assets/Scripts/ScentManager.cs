@@ -68,7 +68,8 @@ public class ScentManager : MonoBehaviour
             List<Vector2Int> path = Pathfinder.FindPath(
                 player.CurrentGridPos(),
                 ItemManager.Instance.Items[i].gridPos,
-                player.playerFloor);
+                player.playerFloor,
+                true);
 
             // Set new closest item
             if (path!=null && path.Count < minDistance)

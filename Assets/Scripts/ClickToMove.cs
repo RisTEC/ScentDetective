@@ -44,7 +44,7 @@ public class ClickToMove : MonoBehaviour
             Debug.Log("Left Click");
 
         Vector2Int start = player.CurrentGridPos();
-        var path = Pathfinder.FindPath(start, target, player.playerFloor);
+        var path = Pathfinder.FindPath(start, target, player.playerFloor, false);
 
         if (path != null){
             Debug.Log("Assigning Path");

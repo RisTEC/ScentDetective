@@ -10,7 +10,7 @@ public static class Pathfinder
         Vector2Int.right
     };
     
-    public static List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal, float startLevel)
+    public static List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal, float startLevel, bool adjacentToGoal)
     {
         Debug.Log($"=== PATHFINDING START ===");
         Debug.Log($"Start: {start}, Goal: {goal}, StartLevel: {startLevel:F2}");
@@ -42,6 +42,13 @@ public static class Pathfinder
             {
                 var next = current + dir;
                 
+                if( adjacentToGoal && next == goal)
+                {
+                    // End search if adjacent to the goal
+                    Debug.Log($"<color=green>GOAL REACHED at {current} in {iterations} iterations!</color>");
+                    break;
+                }
+
                 if (cameFrom.ContainsKey(next))
                     continue;
                 
@@ -79,7 +86,7 @@ public static class Pathfinder
             }
         }
         
-        if (!cameFrom.ContainsKey(goal))
+        if (!cameFrom.ContainsKey(goal) && !adjacentToGoal)
         {
             Debug.LogWarning($"<color=red>NO PATH FOUND after {iterations} iterations</color>");
             return null;
