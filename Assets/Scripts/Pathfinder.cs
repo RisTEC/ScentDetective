@@ -49,14 +49,17 @@ public static class Pathfinder
                 {
                     // End search if adjacent to the goal
                     Debug.Log($"<color=green>GOAL REACHED at {current} in {iterations} iterations!</color>");
+                    frontier = new Queue<(Vector2Int, float)>();
                     break;
                 }
 
+                // Tile already covered by search
                 if (cameFrom.ContainsKey(next))
                     continue;
                 
                 bool walkable = GridManager.Instance.IsWalkable(next, currentLevel);
                 
+                // Obstacle blocking tile, exlude it
                 if (!walkable)
                 {
                     if (iterations <= maxLoggedSteps)
