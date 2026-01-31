@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
 public class GridManager : MonoBehaviour
 {
     public List<GridTile> tiles = new List<GridTile>();
@@ -17,6 +19,13 @@ public class GridManager : MonoBehaviour
     public void UpdateTileInfo()
     {
         tiles = new List<GridTile>(this.GetComponentsInChildren<GridTile>());
+
+        // Get all stairs => get their GridTile script
+        List<GridTile> stairs = new List<GridTile>(GameObject.FindGameObjectsWithTag("Stair").
+            Select(stair => stair.GetComponent<GridTile>()));
+
+        tiles.AddRange(stairs);
+        
         foreach(GridTile tile in tiles)
         {
             tile.UpdateGridInfo();

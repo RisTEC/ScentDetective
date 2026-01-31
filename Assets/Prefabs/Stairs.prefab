@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3573792329393464647}
   m_Layer: 6
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,5 @@ MonoBehaviour:
   walkable: 1
   level: 0
   isStairs: 1
+  gridRenderer: {fileID: 0}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
