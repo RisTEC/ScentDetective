@@ -24,7 +24,10 @@ public class ClickToMove : MonoBehaviour
             current = null;
         }
         current = hit.collider.GetComponentInParent<GridTile>();
-        current.Highlight();
+        if (current.walkable)
+        {
+            current.Highlight();
+        }
         Vector2Int target = new Vector2Int(
             Mathf.RoundToInt(hit.point.x),
             Mathf.RoundToInt(hit.point.z)
