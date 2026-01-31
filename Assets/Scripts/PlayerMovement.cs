@@ -1,42 +1,56 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float playerFloor = 0f;
-
+    public float heightOffset = 0.5f;
+    
     Queue<Vector3> worldPath = new Queue<Vector3>();
-
+    
     void Update()
     {
         if (worldPath.Count == 0)
             return;
-
+        
         Vector3 target = worldPath.Peek();
         transform.position = Vector3.MoveTowards(
             transform.position,
             target,
             moveSpeed * Time.deltaTime
         );
-
+        
         if (Vector3.Distance(transform.position, target) < 0.05f)
         {
             transform.position = target;
             worldPath.Dequeue();
+            
+            // Update player floor based on Y position
+            playerFloor = (transform.position.y - heightOffset) / 2.4f;
         }
     }
-
+    
     public void MoveAlongPath(List<Vector2Int> path)
     {
         worldPath.Clear();
-
+        
+        float currentLevel = playerFloor; // Track level as we build path
+        
         foreach (var p in path)
         {
-            worldPath.Enqueue(new Vector3(p.x, transform.position.y, p.y));
+            GridTile tile = GridManager.Instance.GetTileAt(p, currentLevel);
+            
+            if (tile != null)
+            {
+                float yPos = (tile.level * 2.4f) + heightOffset;
+                worldPath.Enqueue(new Vector3(p.x, yPos, p.y));
+                
+                // Update currentLevel for next tile lookup
+                currentLevel = tile.level;
+            }
         }
     }
-
+    
     public Vector2Int CurrentGridPos()
     {
         return new Vector2Int(

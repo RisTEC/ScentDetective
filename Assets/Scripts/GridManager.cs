@@ -1,28 +1,56 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
-
-    public Dictionary<Vector2Int, GridTile> tiles =
-        new Dictionary<Vector2Int, GridTile>();
-
+    public List<GridTile> allTiles = new List<GridTile>();
+    
     void Start()
     {
         Instance = this;
-
-        GridTile[] allTiles =
-            FindObjectsByType<GridTile>(FindObjectsSortMode.None);
-
+        GridTile[] foundTiles = FindObjectsByType<GridTile>(FindObjectsSortMode.None);
+        allTiles.AddRange(foundTiles);
+        
+        int stairCount = 0;
         foreach (var tile in allTiles)
         {
-            tiles[tile.gridPos] = tile;
+            if (tile.isStairs)
+            {
+                stairCount++;
+            }
         }
     }
-
-    public bool IsWalkable(Vector2Int pos)
+    
+    public bool IsWalkable(Vector2Int pos, float currentLevel)
     {
-        return tiles.ContainsKey(pos) && tiles[pos].walkable;
+        foreach (var tile in allTiles)
+        {
+            if (tile.gridPos != pos || !tile.walkable)
+                continue;
+            
+            float levelDiff = Mathf.Abs(tile.level - currentLevel);
+            
+            if (levelDiff < 0.01f)
+                return true;
+            
+            if (tile.isStairs && levelDiff <= 0.3f)
+                return true;
+        }
+        return false;
+    }
+    
+    public GridTile GetTileAt(Vector2Int pos, float currentLevel)
+    {
+        foreach (var tile in allTiles)
+        {
+            if (tile.gridPos != pos || !tile.walkable)
+                continue;
+            
+            float levelDiff = Mathf.Abs(tile.level - currentLevel);
+            
+            if (levelDiff < 0.01f || (tile.isStairs && levelDiff <= 0.3f))
+                return tile;
+        }
+        return null;
     }
 }
