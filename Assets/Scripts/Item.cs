@@ -1,3 +1,4 @@
+using OVR.Data;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -6,7 +7,7 @@ public class Item : MonoBehaviour
     public bool ManualLocation;
     public Vector2Int gridPos;
     public float level;
-    public Scent scent;
+    public OdorAsset scent;
 
     /// <summary>
     /// Raycast to find a matching tile location
