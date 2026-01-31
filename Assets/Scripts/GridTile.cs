@@ -5,6 +5,9 @@ public class GridTile : MonoBehaviour
     public bool walkable = true;
     public float level = 0; 
     public bool isStairs = false; 
+    public Renderer gridRenderer; 
+    private Color originalColor;
+    public Color hoverColor = Color.yellow;
     
     void Awake()
     {
@@ -13,5 +16,26 @@ public class GridTile : MonoBehaviour
             Mathf.RoundToInt(transform.position.z)
         );
         level = Mathf.Round(transform.position.y / 2.4f * 4f) / 4f;
+        gridRenderer = GetComponentInChildren<Renderer>();
+        if (gridRenderer != null)
+        {
+            originalColor = gridRenderer.material.color;
+        }
+    }
+
+    public void Highlight()
+    {
+        if (gridRenderer != null)
+        {
+            gridRenderer.material.color = hoverColor;
+        }
+    }
+    
+    public void Unhighlight()
+    {
+        if (gridRenderer != null)
+        {
+            gridRenderer.material.color = originalColor;
+        }
     }
 }
