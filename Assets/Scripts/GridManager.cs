@@ -20,6 +20,18 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Call to calculate grid info and walkability of all tiles
+    /// </summary>
+    [ContextMenu("Set initial tile data")]
+    public void UpdateTileInfo()
+    {
+        foreach(GridTile tile in allTiles)
+        {
+            tile.UpdateGridInfo();
+        }
+    }
     
     public bool IsWalkable(Vector2Int pos, float currentLevel)
     {

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class GridTile : MonoBehaviour
 {
@@ -11,17 +12,25 @@ public class GridTile : MonoBehaviour
     
     void Awake()
     {
-        gridPos = new Vector2Int(
-            Mathf.RoundToInt(transform.position.x),
-            Mathf.RoundToInt(transform.position.z)
-        );
-        level = Mathf.Round(transform.position.y / 2.4f * 4f) / 4f;
         gridRenderer = GetComponentInChildren<Renderer>();
         if (gridRenderer != null)
         {
             originalColor = gridRenderer.material.color;
         }
     }
+    public void UpdateGridInfo()
+    {
+        // Calculate postion and level
+        gridPos = new Vector2Int(
+            Mathf.RoundToInt(transform.position.x),
+            Mathf.RoundToInt(transform.position.z)
+        );
+        level = Mathf.Round(transform.position.y / 2.4f * 4f) / 4f;
+
+        // Raycast to check if an obstacle is above
+        Debug.DrawRay(transform.position, Vector3.up, Color.green, 10.0f);
+        walkable = Physics.Raycast(transform.position, Vector3.up, Mathf.Infinity, LayerMask.NameToLayer("Obstacle"));
+    } 
 
     public void Highlight()
     {

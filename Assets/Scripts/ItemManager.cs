@@ -39,7 +39,6 @@ public class ItemManager : MonoBehaviour
             Debug.DrawRay(item.transform.position, Vector3.down, Color.blue, 10.0f);
             if(Physics.Raycast(item.transform.position, Vector3.down, out hitInfo , Mathf.Infinity))
             {
-                Debug.Log(hitInfo);
                 // Copy gridTile info over
                 GridTile hitTile= hitInfo.collider.GetComponent<GridTile>();
                 item.gridPos = hitTile.gridPos;
@@ -47,6 +46,7 @@ public class ItemManager : MonoBehaviour
             }
             else
             {
+                // Default info because there is no tile
                 item.gridPos = Vector2Int.zero;
                 item.level = 0;
                 unassignedItems++;
