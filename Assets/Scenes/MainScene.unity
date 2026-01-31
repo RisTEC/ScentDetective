@@ -5071,7 +5071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd34b6e099e848dcb70ff87bae32ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTiles: []
+  tiles: []
 --- !u!4 &1879631993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8303390914422865659, guid: 1291dd62538674cf89fbc200df6c56e4, type: 3}
