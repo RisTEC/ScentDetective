@@ -10,7 +10,7 @@ public class ScentManager : MonoBehaviour
     public List<OdorAsset> listOfScents;
 
     public static ScentManager Instance;
-    private PlayerMovement player;
+    public PlayerMovement player;
     public int CurrentScent = 0;
     public OdorAsset SelectedScent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +19,7 @@ public class ScentManager : MonoBehaviour
         Instance = this;
 
         SelectedScent = listOfScents[CurrentScent];
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -64,6 +64,15 @@ public class ScentManager : MonoBehaviour
 
         for (int i = 0; i < ItemManager.Instance.Items.Count; i++)
         {
+            if (!player)
+            {
+                Debug.Log("Player undefined");
+            }
+            
+            if (!ItemManager.Instance)
+            {
+                Debug.Log("Player undefined");
+            }
             // Find path from player to item
             List<Vector2Int> path = Pathfinder.FindPath(
                 player.CurrentGridPos(),
@@ -79,6 +88,7 @@ public class ScentManager : MonoBehaviour
                 itemPath = path;
             }
         }
+         ItemManager.Instance.Items[itemIndex].transform.position += new Vector3(0,1,0);
         Debug.Log(minDistance);
         OlfactoryEpithelium.Get().PlayOdor(SelectedScent,255f);
     }

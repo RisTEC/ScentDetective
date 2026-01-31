@@ -24,10 +24,13 @@ public static class Pathfinder
         int iterations = 0;
         int maxLoggedSteps = 15; // Only log first 15 steps to avoid spam
         
+        Vector2Int lastTile = goal;
+
         while (frontier.Count > 0)
         {
             iterations++;
             var (current, currentLevel) = frontier.Dequeue();
+            lastTile = current;
             
             if (iterations <= maxLoggedSteps)
                 Debug.Log($"[{iterations}] Exploring {current} at level {currentLevel:F2}");
@@ -92,9 +95,10 @@ public static class Pathfinder
             return null;
         }
         
+        Debug.Log("Reconstructing path");
         // Reconstruct path
         List<Vector2Int> path = new List<Vector2Int>();
-        Vector2Int temp = goal;
+        Vector2Int temp = lastTile;
         while (temp != start)
         {
             path.Add(temp);
