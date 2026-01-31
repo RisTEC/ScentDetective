@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
     public bool ManualLocation;
     public Vector2Int gridPos;
     public float level;
+    public Scent scent;
 
     /// <summary>
     /// Raycast to find a matching tile location

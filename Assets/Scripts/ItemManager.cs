@@ -7,17 +7,19 @@ using UnityEditor;
 public class ItemManager : MonoBehaviour
 {
     private List<Item> items;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public List<Item> Items
     {
-        
+        get
+        {
+            return items;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static ItemManager Instance;
+
+    void Start()
     {
-        
+        Instance = this;    
     }
 
     /// <summary>
