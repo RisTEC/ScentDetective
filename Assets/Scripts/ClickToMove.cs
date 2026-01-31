@@ -5,11 +5,16 @@ public class ClickToMove : MonoBehaviour
     public LayerMask floorLayer;
     public GridTile current;
 
+    void Start()
+    {
+        floorLayer = LayerMask.GetMask("Floor");
+    }
     void Update()
     {
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!Physics.Raycast(ray, out RaycastHit hit, 100f, floorLayer))
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit, 100f, floorLayer))
         {
             if (current != null)
             {
@@ -35,11 +40,15 @@ public class ClickToMove : MonoBehaviour
 
         if (!Input.GetMouseButtonDown(0))
             return;
+        else
+            Debug.Log("Left Click");
 
         Vector2Int start = player.CurrentGridPos();
         var path = Pathfinder.FindPath(start, target, player.playerFloor);
 
-        if (path != null)
+        if (path != null){
+            Debug.Log("Assigning Path");
             player.MoveAlongPath(path);
+        }
     }
 }

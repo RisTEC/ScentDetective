@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEditor;
 
 public class ItemManager : MonoBehaviour
 {
@@ -29,28 +30,18 @@ public class ItemManager : MonoBehaviour
         // Get item script from children
         items = new List<Item>(this.GetComponentsInChildren<Item>());
         
-        // Raycast down from each item to find a matching gridTile
         int unassignedItems = 0;
         foreach(Item item in items)
         {
             if(item.ManualLocation){continue;}
-
-            RaycastHit hitInfo;
-            Debug.DrawRay(item.transform.position, Vector3.down, Color.blue, 10.0f);
-            if(Physics.Raycast(
-                item.transform.position, Vector3.down, out hitInfo , Mathf.Infinity, LayerMask.GetMask("Floor")))
+            if (!item.AssignLocation())
             {
-                // Copy gridTile info over
-                GridTile hitTile= hitInfo.collider.GetComponent<GridTile>();
-                item.gridPos = hitTile.gridPos;
-                item.level = hitTile.level;
+                unassignedItems++;
             }
             else
             {
-                // Default info because there is no tile
-                item.gridPos = Vector2Int.zero;
-                item.level = 0;
-                unassignedItems++;
+                // Makes it so the values don't revert to default when game is started
+                EditorUtility.SetDirty(item);
             }
         }
         Debug.Log("Items that need assigning: " + unassignedItems);
