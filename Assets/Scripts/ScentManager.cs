@@ -1,48 +1,54 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using OVR.Data;
+using OVR.Components;
 
-public enum Scent
-{
-    None,
-    Suspect1,
-    Suspect2,
-    Suspect3,
-    Suspect4,
-    Suspect5
 
-}
-public class ScentSelector : MonoBehaviour
+public class ScentManager : MonoBehaviour
 {
-    public Scent SelectedScent;
-    public static ScentSelector Instance;
+    public List<OdorAsset> listOfScents;
+
+    public static ScentManager Instance;
     private PlayerMovement player;
+    public int CurrentScent = 0;
+    public OdorAsset SelectedScent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Instance = this;
-        SelectedScent = Scent.None;
+
+        SelectedScent = listOfScents[CurrentScent];
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SelectedScent = Scent.None;
+            if (CurrentScent < listOfScents.Count)
+            {
+                CurrentScent++;
+                SelectedScent = listOfScents[CurrentScent];
+            }
+            else
+            {
+                CurrentScent = listOfScents.Count;
+            }
+
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SelectedScent = Scent.Suspect1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SelectedScent = Scent.Suspect2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SelectedScent = Scent.Suspect3;
+            if (CurrentScent > 0)
+            {
+                CurrentScent--;
+                SelectedScent = listOfScents[CurrentScent];
+            }
+            else
+            {
+                CurrentScent = 0;
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -63,21 +69,22 @@ public class ScentSelector : MonoBehaviour
                 player.CurrentGridPos(),
                 ItemManager.Instance.Items[i].gridPos,
                 player.playerFloor);
-            
+
             // Set new closest item
-            if(path.Count < minDistance)
+            if (path!=null && path.Count < minDistance)
             {
                 minDistance = path.Count;
                 itemIndex = i;
                 itemPath = path;
             }
         }
-
-
+        Debug.Log(minDistance);
+        OlfactoryEpithelium.Get().PlayOdor(SelectedScent,255f);
     }
+    
 
     public void CreateTrail()
     {
-        
+
     }
 }

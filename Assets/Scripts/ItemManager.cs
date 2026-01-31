@@ -6,6 +6,7 @@ using UnityEditor;
 
 public class ItemManager : MonoBehaviour
 {
+    [SerializeField]
     private List<Item> items;
     public List<Item> Items
     {

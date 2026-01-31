@@ -1,4 +1,7 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="OVR.UnityPlugin.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="OVR.AdminDebugger.csproj" />
+  <Project Path="OVR.UnityPlugin.Editor.csproj" />
 </Solution>
