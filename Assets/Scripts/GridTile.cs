@@ -30,7 +30,7 @@ public class GridTile : MonoBehaviour
             Mathf.RoundToInt(transform.position.x),
             Mathf.RoundToInt(transform.position.z)
         );
-        level = Mathf.Round(transform.position.y / 2.4f * 4f) / 4f;
+        level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
 
         // Raycast to check if an obstacle is above
         walkable = !Physics.Raycast(transform.position, Vector3.up, Mathf.Infinity, LayerMask.GetMask("Obstacles"));
