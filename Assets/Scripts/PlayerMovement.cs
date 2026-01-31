@@ -4,8 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float playerFloor = 0f;
-    public float heightOffset = 0.5f;
-    
+    public float heightOffset = 0.8f;
     Queue<Vector3> worldPath = new Queue<Vector3>();
     
     void Update()
@@ -25,16 +24,14 @@ public class PlayerMovement : MonoBehaviour
             transform.position = target;
             worldPath.Dequeue();
             
-            // Update player floor based on Y position
-            playerFloor = (transform.position.y - heightOffset) / 2.4f;
+            playerFloor = (transform.position.y - heightOffset) / 3f;
         }
     }
     
     public void MoveAlongPath(List<Vector2Int> path)
     {
         worldPath.Clear();
-        
-        float currentLevel = playerFloor; // Track level as we build path
+        float currentLevel = playerFloor;
         
         foreach (var p in path)
         {
@@ -42,10 +39,9 @@ public class PlayerMovement : MonoBehaviour
             
             if (tile != null)
             {
-                float yPos = (tile.level * 2.4f) + heightOffset;
+                float yPos = (tile.level * 3f) + heightOffset;
                 worldPath.Enqueue(new Vector3(p.x, yPos, p.y));
                 
-                // Update currentLevel for next tile lookup
                 currentLevel = tile.level;
             }
         }
