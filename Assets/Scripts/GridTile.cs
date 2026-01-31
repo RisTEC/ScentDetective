@@ -29,7 +29,7 @@ public class GridTile : MonoBehaviour
 
         // Raycast to check if an obstacle is above
         Debug.DrawRay(transform.position, Vector3.up, Color.green, 10.0f);
-        walkable = Physics.Raycast(transform.position, Vector3.up, Mathf.Infinity, LayerMask.NameToLayer("Obstacle"));
+        walkable = !Physics.Raycast(transform.position, Vector3.up, Mathf.Infinity, LayerMask.GetMask("Obstacle"));
     } 
 
     public void Highlight()

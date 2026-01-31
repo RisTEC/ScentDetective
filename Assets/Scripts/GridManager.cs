@@ -1,24 +1,13 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 public class GridManager : MonoBehaviour
 {
+    public List<GridTile> tiles = new List<GridTile>();
     public static GridManager Instance;
-    public List<GridTile> allTiles = new List<GridTile>();
-    
-    void Start()
+    public void Start()
     {
         Instance = this;
-        GridTile[] foundTiles = FindObjectsByType<GridTile>(FindObjectsSortMode.None);
-        allTiles.AddRange(foundTiles);
-        
-        int stairCount = 0;
-        foreach (var tile in allTiles)
-        {
-            if (tile.isStairs)
-            {
-                stairCount++;
-            }
-        }
     }
 
     /// <summary>
@@ -27,7 +16,8 @@ public class GridManager : MonoBehaviour
     [ContextMenu("Set initial tile data")]
     public void UpdateTileInfo()
     {
-        foreach(GridTile tile in allTiles)
+        tiles = new List<GridTile>(this.GetComponentsInChildren<GridTile>());
+        foreach(GridTile tile in tiles)
         {
             tile.UpdateGridInfo();
         }
@@ -35,7 +25,7 @@ public class GridManager : MonoBehaviour
     
     public bool IsWalkable(Vector2Int pos, float currentLevel)
     {
-        foreach (var tile in allTiles)
+        foreach (var tile in tiles)
         {
             if (tile.gridPos != pos || !tile.walkable)
                 continue;
@@ -53,7 +43,7 @@ public class GridManager : MonoBehaviour
     
     public GridTile GetTileAt(Vector2Int pos, float currentLevel)
     {
-        foreach (var tile in allTiles)
+        foreach (var tile in tiles)
         {
             if (tile.gridPos != pos || !tile.walkable)
                 continue;

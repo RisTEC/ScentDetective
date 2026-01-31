@@ -37,7 +37,8 @@ public class ItemManager : MonoBehaviour
 
             RaycastHit hitInfo;
             Debug.DrawRay(item.transform.position, Vector3.down, Color.blue, 10.0f);
-            if(Physics.Raycast(item.transform.position, Vector3.down, out hitInfo , Mathf.Infinity))
+            if(Physics.Raycast(
+                item.transform.position, Vector3.down, out hitInfo , Mathf.Infinity, LayerMask.GetMask("Floor")))
             {
                 // Copy gridTile info over
                 GridTile hitTile= hitInfo.collider.GetComponent<GridTile>();
