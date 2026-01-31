@@ -12,6 +12,11 @@ public class GridTile : MonoBehaviour
     
     void Awake()
     {
+        gridPos = new Vector2Int(
+            Mathf.RoundToInt(transform.position.x),
+            Mathf.RoundToInt(transform.position.z)
+        );
+        level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
         gridRenderer = GetComponentInChildren<Renderer>();
         if (gridRenderer != null)
         {
