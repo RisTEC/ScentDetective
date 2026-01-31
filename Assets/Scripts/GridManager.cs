@@ -47,7 +47,7 @@ public class GridManager : MonoBehaviour
             if (levelDiff < 0.01f)
                 return true;
             
-            if (tile.isStairs && levelDiff <= 0.55f)
+            if (tile.isStairs && levelDiff <= 0.3f)
                 return true;
         }
         return false;
@@ -62,7 +62,7 @@ public class GridManager : MonoBehaviour
             
             float levelDiff = Mathf.Abs(tile.level - currentLevel);
             
-            if (levelDiff < 0.01f || (tile.isStairs && levelDiff <= 0.55f))
+            if (levelDiff < 0.01f || (tile.isStairs && levelDiff <= 0.3f))
                 return tile;
         }
         return null;
