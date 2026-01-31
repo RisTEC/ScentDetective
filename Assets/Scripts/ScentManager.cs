@@ -57,6 +57,7 @@ public class ScentManager : MonoBehaviour
     }
     public void Sniff()
     {
+
         // Get closest item with selected scent
         int itemIndex = -1;
         int minDistance = int.MaxValue;
@@ -64,35 +65,33 @@ public class ScentManager : MonoBehaviour
 
         for (int i = 0; i < ItemManager.Instance.Items.Count; i++)
         {
-            if (!player)
+            if (ItemManager.Instance.Items[i].scent == SelectedScent)
             {
-                Debug.Log("Player undefined");
-            }
-            
-            if (!ItemManager.Instance)
-            {
-                Debug.Log("Player undefined");
-            }
-            // Find path from player to item
-            List<Vector2Int> path = Pathfinder.FindPath(
+                // Find path from player to item
+                List<Vector2Int> path = Pathfinder.FindPath(
                 player.CurrentGridPos(),
                 ItemManager.Instance.Items[i].gridPos,
                 player.playerFloor,
                 true);
 
-            // Set new closest item
-            if (path!=null && path.Count < minDistance)
-            {
-                minDistance = path.Count;
-                itemIndex = i;
-                itemPath = path;
+                // Set new closest item
+                if (path != null && path.Count < minDistance)
+                {
+                    minDistance = path.Count;
+                    itemIndex = i;
+                    itemPath = path;
+                }
             }
+
+            Debug.Log(minDistance);
+            if (minDistance != int.MaxValue)
+            {
+                OlfactoryEpithelium.Get().PlayOdor(SelectedScent, 255f);
+            }
+
         }
-         ItemManager.Instance.Items[itemIndex].transform.position += new Vector3(0,1,0);
-        Debug.Log(minDistance);
-        OlfactoryEpithelium.Get().PlayOdor(SelectedScent,255f);
     }
-    
+
 
     public void CreateTrail()
     {
