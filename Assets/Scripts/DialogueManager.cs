@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
-
+    public System.Action OnDialogueFinished;
     Queue<string> lines = new Queue<string>();
     bool active = false;
 
@@ -55,5 +55,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         active = false;
+
+        OnDialogueFinished?.Invoke();
+        OnDialogueFinished = null;
     }
 }
