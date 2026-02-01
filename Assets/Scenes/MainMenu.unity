@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3195f2bc581174a8980672d6d3725af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstGameScene: MainSceneCrime 1
+  firstGameScene: Newspaper
 --- !u!1 &1275361600
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ MonoBehaviour:
   - Mechanic
   - Lumberjack
   - Nanny
-  culprit: Gardener
+  culprit: Mechanic
   gameEnded: 0
 --- !u!4 &1742119442
 Transform:
