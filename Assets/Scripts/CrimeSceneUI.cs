@@ -1,15 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuUI : MonoBehaviour
+public class CrimeSceneUI : MonoBehaviour
 {
-    public string firstGameScene = "Newspaper";
+    public string firstGameScene = "MainSceneCrime 1";
 
     public void StartGame()
     {
         // Reset game state if replaying
-        GameManager.Instance.gameEnded = false;
-
         SceneManager.LoadScene(firstGameScene);
     }
 }
