@@ -24,18 +24,20 @@ public class GridTile : MonoBehaviour
         }
     }
     public void UpdateGridInfo()
-    {
-        // Calculate postion and level
-        gridPos = new Vector2Int(
-            Mathf.RoundToInt(transform.position.x),
-            Mathf.RoundToInt(transform.position.z)
-        );
-        level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
-
-        // Raycast to check if an obstacle is above
-        walkable = !Physics.Raycast(transform.position, Vector3.up, Mathf.Infinity, LayerMask.GetMask("Obstacles"));
-        Debug.DrawRay(transform.position, Vector3.up, walkable ? Color.green : Color.red, 10.0f);
-    } 
+{
+    // Calculate position and level
+    gridPos = new Vector2Int(
+        Mathf.RoundToInt(transform.position.x),
+        Mathf.RoundToInt(transform.position.z)
+    );
+    level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
+    
+    // Raycast upward with a limited distance to check for obstacles at this level
+    Vector3 rayStart = transform.position + Vector3.down * 0.1f;
+    walkable = !Physics.Raycast(rayStart, Vector3.up, 2f, LayerMask.GetMask("Obstacles"));
+    
+    Debug.DrawRay(rayStart, Vector3.up * 2f, walkable ? Color.green : Color.red, 10.0f);
+}
 
     public void Highlight()
     {
