@@ -55,7 +55,9 @@ public class ScentManager : MonoBehaviour
         List<Vector2Int> itemPath = null;
 
         for (int i = 0; i < ItemManager.Instance.Items.Count; i++)
-        {
+        {   
+            if(ItemManager.Instance.Items[i].discovered)
+                break;
             if (ItemManager.Instance.Items[i].scent == SelectedScent)
             {
                 // Find path from player to item
@@ -76,6 +78,7 @@ public class ScentManager : MonoBehaviour
         }
         if (itemPath != null && itemPath.Count <= smellRange)
         {
+            
             CreateTrail(itemPath, itemIndex, Mathf.Pow(1 - minDistance / smellRange,2)*2.0f);
             OlfactoryEpithelium.Get().PlayOdor(SelectedScent, Mathf.Ceil((1 - minDistance / smellRange) * 4.0f) * (255.0f / 4.0f));
         }

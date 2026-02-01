@@ -6,16 +6,21 @@ public class Suspect : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (AccusationUI.IsConfirming) return;
         SpotlightController.Instance.FocusOn(transform);
+        HoverTextUI.Instance.Show(suspectName);
     }
 
     void OnMouseExit()
     {
+        if (AccusationUI.IsConfirming) return;
         SpotlightController.Instance.ClearFocus();
+        HoverTextUI.Instance.Hide();
     }
 
     void OnMouseDown()
     {
-        GameManager.Instance.Accuse(suspectName);
+        if (AccusationUI.IsConfirming) return;
+        AccusationUI.Instance.Show(suspectName);
     }
 }

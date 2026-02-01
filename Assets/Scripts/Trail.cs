@@ -22,7 +22,7 @@ public class Trail : MonoBehaviour
         Vector3 spawnPosition = GridManager.Instance.GetTileAt(path[index + 2]).transform.position;
         Vector3 targetPosition = GridManager.Instance.GetTileAt(path[index]).transform.position;
         transform.position = spawnPosition + new Vector3(0, 1, 0);
-        transform.rotation = Quaternion.LookRotation(targetPosition - spawnPosition, Vector3.up);
+        transform.rotation = Quaternion.LookRotation(spawnPosition - targetPosition, Vector3.up);
     }
     /// <summary>
     /// Directly set the position and roation
