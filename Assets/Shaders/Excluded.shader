@@ -1,4 +1,4 @@
-Shader "Custom/Stencil"
+Shader "Custom/Excluded"
 {
     Properties
     {
@@ -8,7 +8,6 @@ Shader "Custom/Stencil"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
-        ZWrite off
 
         Stencil{
             ref 1
