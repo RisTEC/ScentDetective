@@ -7287,7 +7287,7 @@ MonoBehaviour:
   - {fileID: 859129721}
   - {fileID: 1979750188}
   - {fileID: 1459526203}
-  - {fileID: 2123663827}
+  - {fileID: 0}
   - {fileID: 407224339}
   - {fileID: 0}
 --- !u!4 &737458779
@@ -17855,11 +17855,11 @@ RectTransform:
   - {fileID: 752521918}
   m_Father: {fileID: 1313953500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 250, y: 250}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1756407390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3573792329393464647, guid: 1291dd62538674cf89fbc200df6c56e4, type: 3}
@@ -21321,82 +21321,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b59448dca604dca9a20ad89fc9cf12, type: 3}
---- !u!1 &2123663826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2123663829}
-  - component: {fileID: 2123663828}
-  - component: {fileID: 2123663827}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2123663827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123663826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0aa482ebe116246b526aa974bd2f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ManualLocation: 0
-  gridPos: {x: 5, y: 0}
-  level: 1
-  particleSpawner: {fileID: 0}
-  scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
-  discovered: 0
-  dialogueText: 'This looks lke it was used to kill someone.
-
-    Why does it smell
-    floral?'
---- !u!65 &2123663828
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123663826}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 290.66913, y: 1036.4695, z: 161.56906}
-  m_Center: {x: 3.917694, y: 99.25864, z: -0.0014648438}
---- !u!4 &2123663829
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123663826}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2125250675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8303390914422865659, guid: 1291dd62538674cf89fbc200df6c56e4, type: 3}
@@ -21672,7 +21596,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2123663829}
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}

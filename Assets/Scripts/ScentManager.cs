@@ -16,7 +16,7 @@ public class ScentManager : MonoBehaviour
     public OdorAsset SelectedScent;
     public GameObject TrailPrefab;
     public Dictionary<string,string> characterSmells = new Dictionary<string, string>{
-        {"SavourySpice","Chef"},
+        {"Savoury Spice","Chef"},
         {"Terra Silva","Gardener"},
         {"Timber","Lumberjack"},
         {"Machina","Mechanic"},

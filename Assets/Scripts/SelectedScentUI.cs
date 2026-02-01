@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 public class SelectedScentUI : MonoBehaviour
@@ -9,6 +8,7 @@ public class SelectedScentUI : MonoBehaviour
     private List<GameObject> models;
     public void Awake()
     {
+        models = new List<GameObject>();
         foreach (Transform child in transform)
         {
             if (child.CompareTag("Character"))
@@ -28,8 +28,13 @@ public class SelectedScentUI : MonoBehaviour
         scentNameText.text =  displayText + scent;
         foreach(GameObject model in models)
         {
-            gameObject.GetComponent<MeshRenderer>().enabled = 
-                gameObject.name == ScentManager.Instance.characterSmells[scent];
+            Debug.Log("Testing: " + model.name);
+            if(model.name == ScentManager.Instance.characterSmells[scent])
+            {
+                Debug.Log("Showing: " + model.name);
+            }
+            model.GetComponent<MeshRenderer>().enabled = 
+                model.name == ScentManager.Instance.characterSmells[scent];
         }
     }
 }
