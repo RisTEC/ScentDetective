@@ -12,6 +12,8 @@ public class Item : MonoBehaviour
     public OdorAsset scent;
     public bool discovered = false;
     private ColorControl color;
+    private AudioSource audioSource;
+    public AudioClip discoverSound;
     [TextArea]
     public string dialogueText;
 
@@ -21,6 +23,7 @@ public class Item : MonoBehaviour
         {
             color = gameObject.AddComponent<ColorControl>();
         }
+        audioSource = GetComponent<AudioSource>();
     }
     /// <summary>
     /// Raycast to find a matching tile location
@@ -61,6 +64,8 @@ public class Item : MonoBehaviour
             return;
 
         discovered = true;
+        if (discoverSound && audioSource)
+            audioSource.PlayOneShot(discoverSound);
         color.SetGrayscale(false);
         Instantiate(particleSpawner, transform.position, Quaternion.identity);
         DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
