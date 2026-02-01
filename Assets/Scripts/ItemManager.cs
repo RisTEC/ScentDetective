@@ -41,11 +41,6 @@ public class ItemManager : MonoBehaviour
             {
                 unassignedItems++;
             }
-            else
-            {
-                // Makes it so the values don't revert to default when game is started
-                EditorUtility.SetDirty(item);
-            }
         }
         Debug.Log("Items that need assigning: " + unassignedItems);
     }
