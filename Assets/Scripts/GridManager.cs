@@ -45,7 +45,7 @@ public class GridManager : MonoBehaviour
             float levelDiff = Mathf.Abs(tile.level - currentLevel);
             
             // Flat traversal
-            if (levelDiff < 0.01f)
+            if (levelDiff < 0.3f)
                 return true;
 
             // Traversal from stair to stair

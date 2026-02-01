@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_StairRailing
-    second: {fileID: 2100000, guid: 77d345225959a4447a0d009d442485c7, type: 2}
+    second: {fileID: 2100000, guid: 3aac247c6474a401fa7359cdcc8ecff5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

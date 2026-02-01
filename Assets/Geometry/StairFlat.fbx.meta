@@ -8,12 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_StairBase
-    second: {fileID: 2100000, guid: 549453666382a4d07a4822feb9c92912, type: 2}
+    second: {fileID: 2100000, guid: f65d214e55da948c78a719690d132ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_StairBase2
+    second: {fileID: 2100000, guid: fb2b666ee5b8b44f8af70410e0c909fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_StairRailing
-    second: {fileID: 2100000, guid: f814770b66af94c059dd224f2a74d08b, type: 2}
+    second: {fileID: 2100000, guid: 3aac247c6474a401fa7359cdcc8ecff5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
