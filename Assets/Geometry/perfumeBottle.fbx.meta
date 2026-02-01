@@ -3,7 +3,22 @@ guid: c548db08b0746480c9567c3147f69661
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_perfumeBottle
+    second: {fileID: 2100000, guid: 84a7cee985179c94e9177a003d8c9ca9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_perfumeBottleCap
+    second: {fileID: 2100000, guid: 9609c70af1ab09f4496be767ba4933d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_perfumeSquirterBalloonThing
+    second: {fileID: 2100000, guid: 77d553dbc0c4a8e40a54e8bd32407ef0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

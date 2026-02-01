@@ -3,7 +3,22 @@ guid: 94613328e003f4d37b37c3a05c3ae633
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_door
+    second: {fileID: 2100000, guid: f36c2491d4f7b71438a6a74bf2749c5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_doorFrame
+    second: {fileID: 2100000, guid: 845889717e187bd46ab17db51c94e593, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_doorKnob
+    second: {fileID: 2100000, guid: 910939a97de7b314d8c258d88e649ba2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

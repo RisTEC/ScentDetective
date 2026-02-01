@@ -3,7 +3,27 @@ guid: e738c155b2e89496f9783d0cd111e0ac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_dirt
+    second: {fileID: 2100000, guid: 565edd3d9c4d5074089429481fa2a65d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_leaves
+    second: {fileID: 2100000, guid: 76c0a644d4f83a64ca9591a527015239, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_plantStem
+    second: {fileID: 2100000, guid: 9d55a8b8e72fb4245a74185bcbcfb9a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_pot
+    second: {fileID: 2100000, guid: c093bf334d894f14f9ba5beb44854cd6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,17 @@ guid: 64b3c5893694c4b5a8cb79aea75b5996
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_safe
+    second: {fileID: 2100000, guid: 9101e3bc9276b894ab991bd98aacddf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_safeWheel
+    second: {fileID: 2100000, guid: 21139d61b9c7f064cbf0e2cb5a8c1c25, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
