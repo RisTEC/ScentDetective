@@ -3,7 +3,7 @@ Shader "Custom/Exclusion"
     Properties
     {
         // Specular vs Metallic workflow
-        _StencilID("Stencil Int", Range(0, 1)) = 1
+        _StencilID("Stencil Int", Range(0, 1)) = 0
 
         _WorkflowMode("Workflow mode", Float) = 1.0
 

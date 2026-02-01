@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4258477947939154528}
   - component: {fileID: 3202566215681088239}
   - component: {fileID: 2703460549211524529}
+  - component: {fileID: 8772978893678121003}
   - component: {fileID: 7400199189777393199}
   m_Layer: 7
   m_Name: Item
@@ -109,6 +110,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8772978893678121003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550546300564419951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53d6b46bf0f6e34a8c802da2e3f09e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7400199189777393199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +137,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 0, y: 0}
   level: 0
+  scent: {fileID: 0}
+  discovered: 0
+  colored: {fileID: 0}
+  dialogueText: 

@@ -10,13 +10,16 @@ public class Item : MonoBehaviour
     public float level;
     public OdorAsset scent;
     public bool discovered = false;
-    public GameObject colored;
+    private ColorControl color;
     [TextArea]
     public string dialogueText;
 
-    void Start()
+    void Awake()
     {
-        colored.SetActive(false);
+        if(!(color = GetComponent<ColorControl>()))
+        {
+            color = gameObject.AddComponent<ColorControl>();
+        }
     }
     /// <summary>
     /// Raycast to find a matching tile location
@@ -57,7 +60,7 @@ public class Item : MonoBehaviour
             return;
 
         discovered = true;
-        colored.SetActive(true);
+        color.SetGrayscale(false);
         DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
         Debug.Log("Discovered item: " + name);
 
