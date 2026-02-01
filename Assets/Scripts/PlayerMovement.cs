@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = target;
             worldPath.Dequeue();
             
-            playerFloor = (transform.position.y - heightOffset) / 3f;
+            playerFloor = Mathf.Round((transform.position.y - heightOffset) / 3f * 4f) / 4f;
         }
     }
     

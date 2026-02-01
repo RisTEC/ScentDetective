@@ -25,8 +25,8 @@ public class GridManager : MonoBehaviour
             Select(stair => stair.GetComponent<GridTile>()));
 
         tiles.AddRange(stairs);
-        
-        foreach(GridTile tile in tiles)
+
+        foreach (GridTile tile in tiles)
         {
             tile.UpdateGridInfo();
 
@@ -34,27 +34,29 @@ public class GridManager : MonoBehaviour
             EditorUtility.SetDirty(tile);
         }
     }
-    
+
     public bool IsWalkable(Vector2Int target, float currentLevel, Vector2Int from)
     {
         foreach (var tile in tiles)
         {
             if (tile.gridPos != target || !tile.walkable)
                 continue;
-            
+
             float levelDiff = Mathf.Abs(tile.level - currentLevel);
-            
-            // Flat traversal
-            if (levelDiff < 0.3f)
+
+            // Flat traversal - same level only
+            if (levelDiff < 0.01f)
                 return true;
 
-            // Traversal from stair to stair
-            if (tile.isStairs && GetTileAt(from).isStairs && levelDiff <= 0.3f)
+            // Level change traversal - BOTH tiles must be stairs
+            GridTile fromTile = GetTileAt(from);
+            if (fromTile != null && tile.isStairs && fromTile.isStairs && levelDiff <= 0.3f)
                 return true;
         }
+
         return false;
     }
-    
+
     public GridTile GetTileAt(Vector2Int pos)
     {
         foreach (var tile in tiles)
