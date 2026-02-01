@@ -9,7 +9,7 @@ public class Trail : MonoBehaviour
     public int trailLength = 3; //default; is assigned in scent manager
     public float intensity = 1.0f;
     private ParticleSystem ps;
-    void Start()
+    void Awake()
     {
         ps = GetComponent<ParticleSystem>();
     }

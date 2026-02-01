@@ -108,7 +108,7 @@ public class ScentManager : MonoBehaviour
             trail.path = itemPath;
             trail.currentIndex = 0;
             trail.trailLength = 0;
-            trail.intensity = 5;
+            trail.intensity = intensity * 1.5f;
             trail.FaceTarget(ItemManager.Instance.Items[itemIndex].transform.position, player.transform.position);
             trail.UpdateIntensity(true);
         }
