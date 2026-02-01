@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         
         foreach (var p in path)
         {
-            GridTile tile = GridManager.Instance.GetTileAt(p, currentLevel);
+            GridTile tile = GridManager.Instance.GetTileAt(p);
             
             if (tile != null)
             {

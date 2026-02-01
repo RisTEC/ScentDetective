@@ -3,16 +3,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using OVR.Data;
 using OVR.Components;
+using System;
 
 
 public class ScentManager : MonoBehaviour
 {
     public List<OdorAsset> listOfScents;
-
     public static ScentManager Instance;
     public PlayerMovement player;
     public int CurrentScent = 0;
     public OdorAsset SelectedScent;
+
+    private float smellRange = 15.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,7 +89,7 @@ public class ScentManager : MonoBehaviour
             Debug.Log(minDistance);
             if (minDistance != int.MaxValue)
             {
-                OlfactoryEpithelium.Get().PlayOdor(SelectedScent, 255f);
+                OlfactoryEpithelium.Get().PlayOdor(SelectedScent, Mathf.Ceil((minDistance/smellRange)*4.0f)*(255.0f/4.0f));
             }
 
         }

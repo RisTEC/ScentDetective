@@ -35,35 +35,33 @@ public class GridManager : MonoBehaviour
         }
     }
     
-    public bool IsWalkable(Vector2Int pos, float currentLevel)
+    public bool IsWalkable(Vector2Int target, float currentLevel, Vector2Int from)
     {
         foreach (var tile in tiles)
         {
-            if (tile.gridPos != pos || !tile.walkable)
+            if (tile.gridPos != target || !tile.walkable)
                 continue;
             
             float levelDiff = Mathf.Abs(tile.level - currentLevel);
             
+            // Flat traversal
             if (levelDiff < 0.01f)
                 return true;
-            
-            if (tile.isStairs && levelDiff <= 0.3f)
+
+            // Traversal from stair to stair
+            if (tile.isStairs && GetTileAt(from).isStairs && levelDiff <= 0.3f)
                 return true;
         }
         return false;
     }
     
-    public GridTile GetTileAt(Vector2Int pos, float currentLevel)
+    public GridTile GetTileAt(Vector2Int pos)
     {
         foreach (var tile in tiles)
         {
             if (tile.gridPos != pos || !tile.walkable)
                 continue;
-            
-            float levelDiff = Mathf.Abs(tile.level - currentLevel);
-            
-            if (levelDiff < 0.01f || (tile.isStairs && levelDiff <= 0.3f))
-                return tile;
+            return tile;
         }
         return null;
     }

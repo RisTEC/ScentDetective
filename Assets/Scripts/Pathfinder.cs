@@ -57,7 +57,7 @@ public static class Pathfinder
                 if (cameFrom.ContainsKey(next))
                     continue;
                 
-                bool walkable = GridManager.Instance.IsWalkable(next, currentLevel);
+                bool walkable = GridManager.Instance.IsWalkable(next, currentLevel, current);
                 
                 // Obstacle blocking tile, exlude it
                 if (!walkable)
@@ -67,7 +67,7 @@ public static class Pathfinder
                     continue;
                 }
                 
-                GridTile nextTile = GridManager.Instance.GetTileAt(next, currentLevel);
+                GridTile nextTile = GridManager.Instance.GetTileAt(next);
                 
                 if (nextTile == null)
                 {
