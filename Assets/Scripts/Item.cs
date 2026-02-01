@@ -10,7 +10,6 @@ public class Item : MonoBehaviour
     public float level;
     public GameObject particleSpawner;
     public OdorAsset scent;
-    [HideInInspector]
     public bool discovered = false;
     private ColorControl color;
     [TextArea]

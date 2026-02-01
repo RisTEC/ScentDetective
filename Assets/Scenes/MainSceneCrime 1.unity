@@ -519,6 +519,10 @@ PrefabInstance:
       value: FloorTiles (46)
       objectReference: {fileID: 0}
     - target: {fileID: 3573792329393464647, guid: 1291dd62538674cf89fbc200df6c56e4, type: 3}
+      propertyPath: walkable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573792329393464647, guid: 1291dd62538674cf89fbc200df6c56e4, type: 3}
       propertyPath: gridPos.x
       value: -1
       objectReference: {fileID: 0}
@@ -2548,15 +2552,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1488363
+      value: -0.8511637
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7929361
+      value: -3.792936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.474148
+      value: 4.474148
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2594,9 +2598,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1078122779}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e738c155b2e89496f9783d0cd111e0ac, type: 3}
       insertIndex: -1
@@ -11144,6 +11155,61 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 324636509}
   m_SourcePrefab: {fileID: 100100000, guid: 8d0ec8f19d1c146a59f2d5f41c2a77e4, type: 3}
+--- !u!1 &1078122778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078122779}
+  - component: {fileID: 1078122780}
+  m_Layer: 7
+  m_Name: Obstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1078122779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078122778}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -17, z: 135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 254979271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1078122780
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078122778}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 137.84528
+  m_Height: 275.69058
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -137.34529}
 --- !u!1 &1081403954
 GameObject:
   m_ObjectHideFlags: 0

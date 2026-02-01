@@ -89,10 +89,8 @@ public class ScentManager : MonoBehaviour
         List<Vector2Int> itemPath = null;
 
         for (int i = 0; i < ItemManager.Instance.Items.Count; i++)
-        {
-            if (ItemManager.Instance.Items[i].discovered)
-                break;
-            if (ItemManager.Instance.Items[i].scent == SelectedScent)
+        {   
+            if (ItemManager.Instance.Items[i].scent == SelectedScent && !ItemManager.Instance.Items[i].discovered)
             {
                 List<Vector2Int> path = Pathfinder.FindPath(
                     player.CurrentGridPos(),

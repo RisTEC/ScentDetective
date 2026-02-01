@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 91089644ff5854be4a05ad92613c6b91
   - enabled: 1
+    path: Assets/Scenes/Newspaper.unity
+    guid: e694428508aab4c34a3074bc3d8f2650
+  - enabled: 1
     path: Assets/Scenes/MainSceneCrime 1.unity
     guid: 55d8e13d0601a47249dc6b4d946d11c0
   - enabled: 1

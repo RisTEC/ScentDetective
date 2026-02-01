@@ -30,8 +30,6 @@ public class GridManager : MonoBehaviour
         {
             tile.UpdateGridInfo();
 
-            // Makes it so the values don't revert to default when game is started
-            EditorUtility.SetDirty(tile);
         }
     }
 
