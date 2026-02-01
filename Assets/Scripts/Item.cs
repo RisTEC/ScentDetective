@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using OVR.Data;
 using UnityEngine;
 
@@ -9,7 +10,14 @@ public class Item : MonoBehaviour
     public float level;
     public OdorAsset scent;
     public bool discovered = false;
-    
+    public GameObject colored;
+    [TextArea]
+    public string dialogueText;
+
+    void Start()
+    {
+        colored.SetActive(false);
+    }
     /// <summary>
     /// Raycast to find a matching tile location
     /// </summary>
@@ -39,14 +47,18 @@ public class Item : MonoBehaviour
 
     public void Interact()
     {
-        
         if (discovered)
+        {
+            DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
             return;
-
+        }
+            
         if (ScentManager.Instance.SelectedScent != scent)
             return;
-        discovered = true;
 
+        discovered = true;
+        colored.SetActive(true);
+        DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
         Debug.Log("Discovered item: " + name);
 
         // TODO:
