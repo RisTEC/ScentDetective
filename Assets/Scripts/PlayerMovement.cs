@@ -7,10 +7,23 @@ public class PlayerMovement : MonoBehaviour
     public float heightOffset = 1f;
     Queue<Vector3> worldPath = new Queue<Vector3>();
 
+    private AudioSource walkAudio;
+    private bool isMoving = false;
+
+    void Awake()
+    {
+        walkAudio = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (worldPath.Count == 0)
+        {
+            StopWalkingSound();
             return;
+        }
+
+        StartWalkingSound();
 
         Vector3 target = worldPath.Peek();
 
@@ -40,6 +53,24 @@ public class PlayerMovement : MonoBehaviour
             worldPath.Dequeue();
 
             playerFloor = Mathf.Round((transform.position.y - heightOffset) / 3f * 4f) / 4f;
+        }
+    }
+
+    void StartWalkingSound()
+    {
+        if (!isMoving)
+        {
+            isMoving = true;
+            walkAudio.Play();
+        }
+    }
+
+    void StopWalkingSound()
+    {
+        if (isMoving)
+        {
+            isMoving = false;
+            walkAudio.Stop();
         }
     }
 
