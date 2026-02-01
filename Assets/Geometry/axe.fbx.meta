@@ -3,7 +3,22 @@ guid: 075aa6ea9913c4d55beeed089193c547
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_axeBlade
+    second: {fileID: 2100000, guid: dd75e39b307e64847a9fc8ad62d96ced, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_axeHandle
+    second: {fileID: 2100000, guid: 728d4127ed1c0ed46939a14e85c09169, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: openPBR_shader1
+    second: {fileID: 2100000, guid: 6b1e9311d9bd3934a8fb87f88a457a47, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

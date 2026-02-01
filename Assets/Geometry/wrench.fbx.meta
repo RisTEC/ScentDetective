@@ -3,7 +3,12 @@ guid: 66baf0f123880404c949fd72ad08c68b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Wrench
+    second: {fileID: 2100000, guid: a1ad9207f76d3004ba7cfdc5bc403dbf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

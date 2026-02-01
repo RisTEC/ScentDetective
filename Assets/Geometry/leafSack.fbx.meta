@@ -3,7 +3,22 @@ guid: e1fa37a589b654a8eb404458ad065f89
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_leafDecal
+    second: {fileID: 2100000, guid: 115567afb76209d48839b1d4ca3bada9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_sack
+    second: {fileID: 2100000, guid: bf3aedf19f35cbd4d97847ec8fdd8c75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_sackRope
+    second: {fileID: 2100000, guid: e1e36fbb00c69a14388564fa6bc314c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
