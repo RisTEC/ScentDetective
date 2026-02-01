@@ -8,6 +8,8 @@ public class ClickItem : MonoBehaviour
 
     void Update()
     {
+        if (UIBlocker.UIActive)
+            return;
         Ray rayItem = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit itemHit;
 

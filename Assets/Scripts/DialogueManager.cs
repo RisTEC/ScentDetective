@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         active = true;
+        UIBlocker.UIActive = true;
 
         ShowNextLine();
     }
@@ -55,6 +56,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         active = false;
+        UIBlocker.UIActive = false;
 
         OnDialogueFinished?.Invoke();
         OnDialogueFinished = null;
