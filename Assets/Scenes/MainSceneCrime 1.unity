@@ -7730,7 +7730,7 @@ Transform:
   m_GameObject: {fileID: 901368086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.947, y: 5.913, z: -6.249}
+  m_LocalPosition: {x: 1.032, y: 1.17, z: -4.448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11208,6 +11208,9 @@ MonoBehaviour:
   scanButton: {fileID: 0}
   deviceHolder: {fileID: 0}
   resultTF: {fileID: 0}
+  EnableSerial: 0
+  SerialAutoConnect: 0
+  SerialDebugLogging: 0
   ION_Sub_ReadyStateCharacteristic: 6e400005-b5a3-f393-e0a9-e50e24dcca9e
 --- !u!4 &1376681028
 Transform:
@@ -11740,7 +11743,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 1, y: 4}
   level: 0.25
-  scent: {fileID: 11400000, guid: 02cfc872576e65340985217d8f6c25c3, type: 2}
+  scent: {fileID: 0}
   discovered: 0
 --- !u!65 &1459526204
 BoxCollider:
@@ -15510,9 +15513,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfScents:
-  - {fileID: 11400000, guid: 518836e565f2f3045af63e4f67a3c364, type: 2}
-  - {fileID: 11400000, guid: 88c58cbbabf506647a648b4f5f3d8d26, type: 2}
-  - {fileID: 11400000, guid: 02cfc872576e65340985217d8f6c25c3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   CurrentScent: 0
   SelectedScent: {fileID: 0}
