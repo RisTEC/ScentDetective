@@ -1,4 +1,4 @@
-Shader "Unlit/GrayScale"
+Shader "Grayscale"
 {
     Properties
     {
@@ -9,15 +9,26 @@ Shader "Unlit/GrayScale"
         Tags { "RenderType"="Opaque" }
         LOD 100
 
+        Stencil{
+            ref 1
+            comp notequal
+        }
+
         Pass
         {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
+            Name "ColorBlitPass"
 
-            #include "UnityCG.cginc"
+            HLSLPROGRAM
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            // The Blit.hlsl file provides the vertex shader (Vert),
+            // input structure (Attributes) and output strucutre (Varyings)
+            #include "Packages/com.unity.render-pipelines.core/Runtime/Utilities/Blit.hlsl"
+
+            #pragma vertex Vert
+            #pragma fragment frag
+
+            TEXTURE2D_X(_CameraOpaqueTexture);
+            SAMPLER(sampler_CameraOpaqueTexture);
 
             struct appdata
             {
@@ -28,7 +39,6 @@ Shader "Unlit/GrayScale"
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
             };
 
@@ -38,21 +48,18 @@ Shader "Unlit/GrayScale"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            half4 frag (Varyings input) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
+                float4 color = SAMPLE_TEXTURE2D_X(_CameraOpaqueTexture, sampler_CameraOpaqueTexture, input.texcoord);
+                float intensity = color.x * 0.299 + color.y * 0.587 + color.z * 0.114;
+                return float4(intensity,intensity,intensity,color.w);
             }
-            ENDCG
+            ENDHLSL
         }
     }
 }
