@@ -7455,8 +7455,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe6fa56f4f3fb0f4faa6a61e041f4526, type: 2}
+  m_sharedMaterial: {fileID: 1507838670418442926, guid: fe6fa56f4f3fb0f4faa6a61e041f4526, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12015,6 +12015,9 @@ MonoBehaviour:
   scanButton: {fileID: 0}
   deviceHolder: {fileID: 0}
   resultTF: {fileID: 0}
+  EnableSerial: 0
+  SerialAutoConnect: 0
+  SerialDebugLogging: 0
   ION_Sub_ReadyStateCharacteristic: 6e400005-b5a3-f393-e0a9-e50e24dcca9e
 --- !u!4 &1376681028
 Transform:
