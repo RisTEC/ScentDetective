@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using OVR.Data;
 using OVR.Components;
 using System;
@@ -17,11 +15,15 @@ public class ScentManager : MonoBehaviour
     public int CurrentScent = 0;
     public OdorAsset SelectedScent;
     public GameObject TrailPrefab;
-
+    public Dictionary<string,string> characterSmells = new Dictionary<string, string>{
+        {"SavourySpice","Chef"},
+        {"Terra Silva","Gardener"},
+        {"Timber","Lumberjack"},
+        {"Machina","Mechanic"},
+        {"Floral","Millionaire"},
+        {"Kindred","Nanny"}};
     private float smellRange = 20.0f;
-    
-    public TextMeshProUGUI scentNameText;
-    //public Image scentIcon;
+    public SelectedScentUI scentUI;
 
     void Start()
     {
@@ -53,9 +55,9 @@ public class ScentManager : MonoBehaviour
     
     void UpdateScentUI()
     {
-        if (scentNameText != null)
+        if (scentUI != null)
         {
-            scentNameText.text = SelectedScent.odorName;
+            scentUI.SelectScent(SelectedScent.name);
         }
     }
     
