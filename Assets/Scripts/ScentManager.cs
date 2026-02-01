@@ -100,6 +100,7 @@ public class ScentManager : MonoBehaviour
             trail.intensity = intensity;
             trail.SetForTile(trail.currentIndex);
             trail.UpdateIntensity(false);
+            trail.StartTrail();
         }
         else
         {
@@ -111,6 +112,7 @@ public class ScentManager : MonoBehaviour
             trail.intensity = intensity * 1.5f;
             trail.FaceTarget(ItemManager.Instance.Items[itemIndex].transform.position, player.transform.position);
             trail.UpdateIntensity(true);
+            trail.StartTrail();
         }
     }
 }

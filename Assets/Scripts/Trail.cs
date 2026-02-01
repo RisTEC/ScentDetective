@@ -70,4 +70,8 @@ public class Trail : MonoBehaviour
             }
         }
     }
+    public void StartTrail()
+    {
+        ps.Play();
+    }
 }

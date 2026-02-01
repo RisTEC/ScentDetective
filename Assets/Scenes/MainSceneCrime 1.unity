@@ -11532,6 +11532,9 @@ MonoBehaviour:
   scanButton: {fileID: 0}
   deviceHolder: {fileID: 0}
   resultTF: {fileID: 0}
+  EnableSerial: 0
+  SerialAutoConnect: 0
+  SerialDebugLogging: 0
   ION_Sub_ReadyStateCharacteristic: 6e400005-b5a3-f393-e0a9-e50e24dcca9e
 --- !u!4 &1376681028
 Transform:
@@ -12064,6 +12067,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 1, y: 4}
   level: 0.25
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 0}
   discovered: 0
   dialogueText: It smells like the chef, was he cooking with it?

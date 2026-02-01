@@ -8,7 +8,9 @@ public class Item : MonoBehaviour
     public bool ManualLocation;
     public Vector2Int gridPos;
     public float level;
+    public GameObject particleSpawner;
     public OdorAsset scent;
+    [HideInInspector]
     public bool discovered = false;
     private ColorControl color;
     [TextArea]
@@ -61,6 +63,7 @@ public class Item : MonoBehaviour
 
         discovered = true;
         color.SetGrayscale(false);
+        Instantiate(particleSpawner, transform.position, Quaternion.identity);
         DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
         Debug.Log("Discovered item: " + name);
 
