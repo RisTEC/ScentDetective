@@ -16,7 +16,7 @@ public class ScentManager : MonoBehaviour
     public OdorAsset SelectedScent;
     public GameObject TrailPrefab;
     public Dictionary<string,string> characterSmells = new Dictionary<string, string>{
-        {"Savoury Spice","Chef"},
+        {"Savory Spice","Chef"},
         {"Terra Silva","Gardener"},
         {"Timber","Lumberjack"},
         {"Machina","Mechanic"},
@@ -37,20 +37,22 @@ public class ScentManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            CurrentScent = (CurrentScent + 1) % listOfScents.Count;
-            SelectedScent = listOfScents[CurrentScent];
-            UpdateScentUI();
+            IncrementSelectedScent(-1);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            CurrentScent = (CurrentScent - 1 + listOfScents.Count) % listOfScents.Count;
-            SelectedScent = listOfScents[CurrentScent];
-            UpdateScentUI();
+            IncrementSelectedScent(1);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Sniff();
         }
+    }
+    public void IncrementSelectedScent(int amount)
+    {
+        CurrentScent = (CurrentScent + amount + listOfScents.Count) % listOfScents.Count;
+            SelectedScent = listOfScents[CurrentScent];
+            UpdateScentUI();
     }
     
     void UpdateScentUI()
