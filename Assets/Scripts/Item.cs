@@ -8,7 +8,8 @@ public class Item : MonoBehaviour
     public Vector2Int gridPos;
     public float level;
     public OdorAsset scent;
-
+    public bool discovered = false;
+    
     /// <summary>
     /// Raycast to find a matching tile location
     /// </summary>
@@ -34,5 +35,23 @@ public class Item : MonoBehaviour
             level = 0;
             return false;
         }
+    }
+
+    public void Interact()
+    {
+        
+        if (discovered)
+            return;
+
+        if (ScentManager.Instance.SelectedScent != scent)
+            return;
+        discovered = true;
+
+        Debug.Log("Discovered item: " + name);
+
+        // TODO:
+        // - Add clue
+        // - Disable glow / trail
+        // - Optional sound
     }
 }

@@ -3,7 +3,9 @@ public class ClickToMove : MonoBehaviour
 {
     public PlayerMovement player;
     public LayerMask floorLayer;
+    public LayerMask itemLayer;
     public GridTile current;
+    public Item currentItem;
 
     void Start()
     {
@@ -11,7 +13,6 @@ public class ClickToMove : MonoBehaviour
     }
     void Update()
     {
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (!Physics.Raycast(ray, out hit, 100f, floorLayer))

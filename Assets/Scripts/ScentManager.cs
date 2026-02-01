@@ -30,28 +30,14 @@ public class ScentManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (CurrentScent < listOfScents.Count)
-            {
-                CurrentScent++;
-                SelectedScent = listOfScents[CurrentScent];
-            }
-            else
-            {
-                CurrentScent = listOfScents.Count;
-            }
+            CurrentScent = (CurrentScent + 1) % listOfScents.Count;
+            SelectedScent = listOfScents[CurrentScent];
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (CurrentScent > 0)
-            {
-                CurrentScent--;
-                SelectedScent = listOfScents[CurrentScent];
-            }
-            else
-            {
-                CurrentScent = 0;
-            }
+            CurrentScent = (CurrentScent - 1 + listOfScents.Count) % listOfScents.Count;
+            SelectedScent = listOfScents[CurrentScent];
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -85,13 +71,11 @@ public class ScentManager : MonoBehaviour
                     itemPath = path;
                 }
             }
-
-            Debug.Log(minDistance);
-            if (minDistance != int.MaxValue)
-            {
-                OlfactoryEpithelium.Get().PlayOdor(SelectedScent, Mathf.Ceil((minDistance/smellRange)*4.0f)*(255.0f/4.0f));
-            }
-
+        }
+        Debug.Log(minDistance);
+        if (minDistance != int.MaxValue)
+        {
+            OlfactoryEpithelium.Get().PlayOdor(SelectedScent, Mathf.Ceil((minDistance / smellRange) * 4.0f) * (255.0f / 4.0f));
         }
     }
 
