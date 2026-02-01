@@ -64,9 +64,6 @@ public class Item : MonoBehaviour
         DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
         Debug.Log("Discovered item: " + name);
 
-        // TODO:
-        // - Add clue
-        // - Disable glow / trail
-        // - Optional sound
+
     }
 }
