@@ -1913,7 +1913,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 1, y: -2}
   level: 0
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 3f66668ba231e1a48a04b146e7b6822a, type: 2}
   discovered: 0
   dialogueText: This was going to be used for a campfire tonight.
@@ -2656,7 +2656,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 0, y: 0}
   level: 0.25
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
   dialogueText: Wasn't the lumberjack allergic to these?
@@ -4273,7 +4273,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 2, y: 3}
   level: 0.25
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 1b803fb9dc3c9aa4db611d00c13c4289, type: 2}
   discovered: 0
   dialogueText: The gardener always leaves his stuff inside
@@ -6703,9 +6703,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManualLocation: 0
-  gridPos: {x: 0, y: 0}
+  gridPos: {x: 1, y: -1}
   level: 0
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 1b803fb9dc3c9aa4db611d00c13c4289, type: 2}
   discovered: 0
   dialogueText: This bag of leaves is oddly small.
@@ -7281,15 +7281,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 925199657}
+  - {fileID: 659505394}
   - {fileID: 254979272}
   - {fileID: 960609984}
   - {fileID: 177149396}
   - {fileID: 859129721}
   - {fileID: 1979750188}
   - {fileID: 1459526203}
-  - {fileID: 0}
   - {fileID: 407224339}
-  - {fileID: 0}
 --- !u!4 &737458779
 Transform:
   m_ObjectHideFlags: 0
@@ -8454,16 +8454,16 @@ MonoBehaviour:
   - {fileID: 555672939}
   - {fileID: 1483509162}
   - {fileID: 1648623382}
-  - {fileID: 240635466}
-  - {fileID: 1442992244}
-  - {fileID: 417926158}
   - {fileID: 825567798}
-  - {fileID: 1622194774}
+  - {fileID: 2143189418}
   - {fileID: 846996794}
+  - {fileID: 240635466}
+  - {fileID: 1622194774}
   - {fileID: 522550616}
   - {fileID: 2002173289}
-  - {fileID: 2143189418}
   - {fileID: 232925608}
+  - {fileID: 417926158}
+  - {fileID: 1442992244}
   - {fileID: 1233220424}
   - {fileID: 1547599116}
 --- !u!4 &801824837 stripped
@@ -9323,7 +9323,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 6, y: -1}
   level: 1
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
   dialogueText: "This was made from the plants downstairs, \nit smells like a flower
@@ -9809,9 +9809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManualLocation: 0
-  gridPos: {x: 0, y: 0}
-  level: 0
-  particleSpawner: {fileID: 0}
+  gridPos: {x: 5, y: 0}
+  level: 1
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
   dialogueText: This looks like it could have killed someone, why does it smell floral?
@@ -10296,7 +10296,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 6, y: 4}
   level: 1.75
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 5c9513703503dcc45b929c75b9f1958d, type: 2}
   discovered: 0
   dialogueText: Why did the nanny access this safe?
@@ -13882,8 +13882,8 @@ MonoBehaviour:
   scanButton: {fileID: 0}
   deviceHolder: {fileID: 0}
   resultTF: {fileID: 0}
-  EnableSerial: 0
-  SerialAutoConnect: 0
+  EnableSerial: 1
+  SerialAutoConnect: 1
   SerialDebugLogging: 0
   ION_Sub_ReadyStateCharacteristic: 6e400005-b5a3-f393-e0a9-e50e24dcca9e
 --- !u!4 &1376681028
@@ -19925,7 +19925,7 @@ MonoBehaviour:
   ManualLocation: 0
   gridPos: {x: 7, y: -1}
   level: 1
-  particleSpawner: {fileID: 0}
+  particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 983904374bd1b6d428d6052fdb317200, type: 2}
   discovered: 0
   dialogueText: Why did the mechanic leave his wrench up here?
