@@ -15,6 +15,7 @@ public class ScentManager : MonoBehaviour
     public int CurrentScent = 0;
     public OdorAsset SelectedScent;
     public GameObject TrailPrefab;
+    public int scentTrailLength = 4;
     public Dictionary<string, string> characterSmells = new Dictionary<string, string>{
         {"Savory Spice","Chef"},
         {"Terra Silva","Gardener"},
@@ -123,7 +124,7 @@ public class ScentManager : MonoBehaviour
             Trail trail = Instantiate(TrailPrefab, Vector3.zero, Quaternion.identity).GetComponent<Trail>();
             trail.path = itemPath;
             trail.currentIndex = 1;
-            trail.trailLength = 10;
+            trail.trailLength = scentTrailLength;
             trail.intensity = intensity;
             trail.SetForTile(trail.currentIndex);
             trail.UpdateIntensity(false);
