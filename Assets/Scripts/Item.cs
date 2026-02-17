@@ -67,10 +67,10 @@ public class Item : MonoBehaviour
         if (discoverSound && audioSource)
             audioSource.PlayOneShot(discoverSound);
         color.SetGrayscale(false);
+        GetComponentInChildren<Light>().enabled = true;
         Instantiate(particleSpawner, transform.position, Quaternion.identity);
         DialogueManager.Instance.StartDialogue(new List<string> { dialogueText });
         Debug.Log("Discovered item: " + name);
-
 
     }
 }
