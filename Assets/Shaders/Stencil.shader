@@ -8,7 +8,7 @@ Shader "Custom/Stencil"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
-        ZWrite on
+        ZWrite off
         ColorMask 0
 
         Stencil{
