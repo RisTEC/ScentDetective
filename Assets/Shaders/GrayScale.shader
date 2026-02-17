@@ -12,7 +12,7 @@ Shader "Custom/Grayscale"
 
         Stencil{
             ref 1
-            comp always
+            comp notequal
         }
 
         Pass
