@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Trail : MonoBehaviour
 {
@@ -19,10 +21,9 @@ public class Trail : MonoBehaviour
     /// <param name="index"></param>
     public void SetForTile(int index)
     {
-        Vector3 spawnPosition = GridManager.Instance.GetTileAt(path[index + 2]).transform.position;
-        Vector3 targetPosition = GridManager.Instance.GetTileAt(path[index]).transform.position;
-        transform.position = spawnPosition + new Vector3(0, 1, 0);
-        transform.rotation = Quaternion.LookRotation(spawnPosition - targetPosition, Vector3.up);
+        Vector3 spawnPosition = GridManager.Instance.GetTileAtUnsafe(path[index]).transform.position;
+        Vector3 targetPosition = GridManager.Instance.GetTileAtUnsafe(path[index - 1]).transform.position;
+        transform.SetPositionAndRotation(spawnPosition + new Vector3(0, 1, 0), Quaternion.LookRotation(targetPosition - spawnPosition, Vector3.up));
     }
     /// <summary>
     /// Directly set the position and roation
@@ -55,7 +56,7 @@ public class Trail : MonoBehaviour
         // triggers in between emmissions for each tile
         if (!ps.isEmitting)
         {
-            if (currentIndex + 2 >= path.Count || currentIndex + 2 >= trailLength)
+            if (currentIndex >= path.Count || currentIndex > trailLength || currentIndex == 0)
             {
                 // Either too close to item or done with trail
                 if (ps.isStopped)

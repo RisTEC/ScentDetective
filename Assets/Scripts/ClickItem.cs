@@ -31,7 +31,7 @@ public class ClickItem : MonoBehaviour
                 currentItem.transform.position
             );
 
-            if (dist <= 1.5f)
+            if (dist <= 1.9f)
             {
                 Vector3 dir = currentItem.transform.position - player.transform.position;
                 dir.y = 0f;

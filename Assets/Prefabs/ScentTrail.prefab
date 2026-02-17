@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8017233501714344414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.73542, z: -0, w: 0.67761165}
-  m_LocalPosition: {x: 5.08, y: 5.12, z: -3.24}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,7 +58,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8017233501714344414}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 3
   cullingMode: 0
@@ -304,8 +304,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1.5
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1014,20 +1014,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.05557242
           value: 0.7248595
-          inSlope: -1.9971935
-          outSlope: -1.9971935
+          inSlope: 0.36365947
+          outSlope: 0.36365947
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.06626327
+          outWeight: 0.13111202
         - serializedVersion: 3
-          time: 0.91508484
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          time: 0.85710144
+          value: 0.024612427
+          inSlope: -2.1072166
+          outSlope: -2.1072166
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.13116756
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -3854,10 +3854,10 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 6330824022512677374, guid: 01a13f0432519214e97dd830395c4722, type: 3}
-    randomDistribution: 0
+    randomDistribution: 1
     color: 0
     range: 1
     intensity: 0
@@ -3967,7 +3967,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 30
+    maxLights: 40
   TrailModule:
     enabled: 0
     mode: 1

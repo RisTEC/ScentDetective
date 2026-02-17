@@ -103,6 +103,7 @@ public class ScentManager : MonoBehaviour
                     minDistance = path.Count;
                     itemIndex = i;
                     itemPath = path;
+                    itemPath.Add(ItemManager.Instance.Items[i].gridPos);
                 }
             }
         }
@@ -116,12 +117,13 @@ public class ScentManager : MonoBehaviour
     public void CreateTrail(List<Vector2Int> itemPath, int itemIndex, float intensity)
     {
         Debug.Log("Spawning Trail with intensity: " + intensity);
-        if (itemPath.Count > 3)
+        if (itemPath.Count > 2)
         {
+            // Follow path
             Trail trail = Instantiate(TrailPrefab, Vector3.zero, Quaternion.identity).GetComponent<Trail>();
             trail.path = itemPath;
             trail.currentIndex = 1;
-            trail.trailLength = 4 + 2;
+            trail.trailLength = 10;
             trail.intensity = intensity;
             trail.SetForTile(trail.currentIndex);
             trail.UpdateIntensity(false);
@@ -129,12 +131,13 @@ public class ScentManager : MonoBehaviour
         }
         else
         {
+            // Directly to player
             Trail trail = Instantiate(TrailPrefab, Vector3.zero, Quaternion.identity).GetComponent<Trail>();
             trail.path = itemPath;
             trail.currentIndex = 0;
             trail.trailLength = 0;
             trail.intensity = intensity * 1.5f;
-            trail.FaceTarget(ItemManager.Instance.Items[itemIndex].transform.position, player.transform.position);
+            trail.FaceTarget(ItemManager.Instance.Items[itemIndex].transform.position, ItemManager.Instance.Items[itemIndex].transform.position + Vector3.up);
             trail.UpdateIntensity(true);
             trail.StartTrail();
         }

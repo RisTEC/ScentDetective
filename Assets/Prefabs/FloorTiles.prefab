@@ -123,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridPos: {x: 0, y: 0}
   walkable: 1
-  level: 0
   isStairs: 0
   gridRenderer: {fileID: 0}
-  hoverColor: {r: 0.1253108, g: 1, b: 0.015686274, a: 1}
+  hoverColor: {r: 0.52961904, g: 0.6270422, b: 0.645283, a: 1}

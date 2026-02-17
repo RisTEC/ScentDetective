@@ -72,4 +72,14 @@ public class GridManager : MonoBehaviour
         }
         return null;
     }
+    public GridTile GetTileAtUnsafe(Vector2Int pos)
+    {
+        foreach (var tile in tiles)
+        {
+            if (tile.gridPos != pos)
+                continue;
+            return tile;
+        }
+        return null;
+    }
 }

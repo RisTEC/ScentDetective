@@ -111,6 +111,7 @@ public static class Pathfinder
             path.Add(temp);
             temp = cameFrom[temp];
         }
+        path.Add(start);
         path.Reverse();
         
         Debug.Log($"<color=green>Path found with {path.Count} steps:</color>");

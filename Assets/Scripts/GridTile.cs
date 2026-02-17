@@ -7,7 +7,7 @@ public class GridTile : MonoBehaviour
     public bool isStairs = false; 
     public Renderer gridRenderer; 
     private Color originalColor;
-    public Color hoverColor = Color.yellow;
+    public Color hoverColor;
     
     void Awake()
     {
