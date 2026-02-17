@@ -84,7 +84,7 @@ Shader "Custom/Exclusion"
         Tags
         {
             "RenderType" = "Opaque"
-            "RenderPipeline" = "UniversalPipeline"
+            //"RenderPipeline" = "UniversalPipeline"
             "UniversalMaterialType" = "Lit"
             "IgnoreProjector" = "True"
         }
