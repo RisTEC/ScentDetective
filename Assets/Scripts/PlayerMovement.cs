@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = target;
             worldPath.Dequeue();
 
-            playerFloor = Mathf.Round((transform.position.y - heightOffset) / 3f * 4f) / 4f;
+            playerFloor = transform.position.y - heightOffset;
         }
     }
 
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             GridTile tile = GridManager.Instance.GetTileAt(p);
             if (tile != null)
             {
-                float yPos = (tile.level * 3f) + heightOffset;
+                float yPos = tile.transform.position.y + heightOffset;
                 worldPath.Enqueue(new Vector3(p.x, yPos, p.y));
             }
         }

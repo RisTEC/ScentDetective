@@ -1964,7 +1964,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 1, y: -2}
-  level: 0
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 3f66668ba231e1a48a04b146e7b6822a, type: 2}
   discovered: 0
@@ -3095,7 +3094,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: -1, y: -1}
-  level: 0
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
@@ -4940,7 +4938,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 2, y: 3}
-  level: 0.25
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 1b803fb9dc3c9aa4db611d00c13c4289, type: 2}
   discovered: 0
@@ -7519,7 +7516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 1, y: -1}
-  level: 0
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 1b803fb9dc3c9aa4db611d00c13c4289, type: 2}
   discovered: 0
@@ -9489,6 +9485,7 @@ MonoBehaviour:
   - {fileID: 846996794}
   - {fileID: 1233220424}
   - {fileID: 1547599116}
+  stairHeight: 1
 --- !u!4 &801824837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2353201621566328972, guid: a4b59448dca604dca9a20ad89fc9cf12, type: 3}
@@ -10346,7 +10343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 6, y: -1}
-  level: 1
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
@@ -11070,7 +11066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 5, y: 0}
-  level: 1
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: dad2b47df7d1d3c44ab900bc36554fb9, type: 2}
   discovered: 0
@@ -11659,7 +11654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 6, y: 4}
-  level: 1.75
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 5c9513703503dcc45b929c75b9f1958d, type: 2}
   discovered: 0
@@ -15173,7 +15167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridPos: {x: 2, y: -3}
   walkable: 1
-  level: 0.25
   isStairs: 1
   gridRenderer: {fileID: 0}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -17466,7 +17459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 1, y: 4}
-  level: 0.25
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 02cfc872576e65340985217d8f6c25c3, type: 2}
   discovered: 0
@@ -18555,7 +18547,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridPos: {x: 2, y: 0}
   walkable: 1
-  level: 1
   isStairs: 1
   gridRenderer: {fileID: 0}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -23609,7 +23600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManualLocation: 0
   gridPos: {x: 7, y: -1}
-  level: 1
   particleSpawner: {fileID: 8017233501714344414, guid: cabf3bdc9a309cd41b7b421feea1ebc9, type: 3}
   scent: {fileID: 11400000, guid: 983904374bd1b6d428d6052fdb317200, type: 2}
   discovered: 0

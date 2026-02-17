@@ -7,6 +7,7 @@ public class GridManager : MonoBehaviour
 {
     public List<GridTile> tiles = new List<GridTile>();
     public static GridManager Instance;
+    public float stairHeight = 0.5f;
     public void Start()
     {
         Instance = this;
@@ -35,20 +36,26 @@ public class GridManager : MonoBehaviour
 
     public bool IsWalkable(Vector2Int target, float currentLevel, Vector2Int from)
     {
+        GridTile fromTile = GetTileAt(from);
         foreach (var tile in tiles)
         {
             if (tile.gridPos != target || !tile.walkable)
                 continue;
 
-            float levelDiff = Mathf.Abs(tile.level - currentLevel);
+            float levelDiff = Mathf.Abs(tile.transform.position.y - currentLevel);
+
+            // Only move orthogonally on stairs
+            if(fromTile.isStairs && tile.isStairs && target.x != from.x && target.y != from.y)
+            {
+                continue;
+            }
 
             // Flat traversal - same level only
-            if (levelDiff < 0.01f)
+            if (levelDiff < 0.3f)
                 return true;
 
             // Level change traversal - BOTH tiles must be stairs
-            GridTile fromTile = GetTileAt(from);
-            if (fromTile != null && tile.isStairs && fromTile.isStairs && levelDiff <= 0.3f)
+            if (fromTile != null && tile.isStairs && fromTile.isStairs && levelDiff <= stairHeight)
                 return true;
         }
 

@@ -4,7 +4,6 @@ public class GridTile : MonoBehaviour
 {
     public Vector2Int gridPos;
     public bool walkable = true;
-    public float level = 0; 
     public bool isStairs = false; 
     public Renderer gridRenderer; 
     private Color originalColor;
@@ -16,7 +15,6 @@ public class GridTile : MonoBehaviour
             Mathf.RoundToInt(transform.position.x),
             Mathf.RoundToInt(transform.position.z)
         );
-        level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
         gridRenderer = GetComponentInChildren<Renderer>();
         if (gridRenderer != null)
         {
@@ -25,14 +23,13 @@ public class GridTile : MonoBehaviour
     }
     public void UpdateGridInfo()
 {
-    // Calculate position and level
+    // Calculate position
     gridPos = new Vector2Int(
         Mathf.RoundToInt(transform.position.x),
         Mathf.RoundToInt(transform.position.z)
     );
-    level = Mathf.Round(transform.position.y / 3f * 4f) / 4f;
     
-    // Raycast upward with a limited distance to check for obstacles at this level
+    // Raycast upward with a limited distance to check for obstacles
     Vector3 rayStart = transform.position + Vector3.down * 0.1f;
     walkable = !Physics.Raycast(rayStart, Vector3.up, 2f, LayerMask.GetMask("Obstacles"));
     

@@ -7,7 +7,11 @@ public static class Pathfinder
         Vector2Int.up,
         Vector2Int.down,
         Vector2Int.left,
-        Vector2Int.right
+        Vector2Int.right,
+        new(1,1),
+        new(-1,1),
+        new(-1,-1),
+        new(1,-1)
     };
     
     public static List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal, float startLevel, bool adjacentToGoal)
@@ -76,7 +80,7 @@ public static class Pathfinder
                     continue;
                 }
                 
-                float nextLevel = nextTile.level;
+                float nextLevel = nextTile.transform.position.y;
                 
                 if (iterations <= maxLoggedSteps)
                     Debug.Log($"  {next} - level={nextLevel:F2}, isStairs={nextTile.isStairs}");

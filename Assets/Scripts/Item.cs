@@ -7,7 +7,6 @@ public class Item : MonoBehaviour
     // Set this to true when it is not located above a tile; manually set the below information in inspector
     public bool ManualLocation;
     public Vector2Int gridPos;
-    public float level;
     public GameObject particleSpawner;
     public OdorAsset scent;
     public bool discovered = false;
@@ -40,14 +39,13 @@ public class Item : MonoBehaviour
             // Copy gridTile info over
             GridTile hitTile = hitInfo.collider.GetComponent<GridTile>();
             gridPos = hitTile.gridPos;
-            level = hitTile.level;
+
             return true;
         }
         else
         {
             // Default info because there is no tile
             gridPos = Vector2Int.zero;
-            level = 0;
             return false;
         }
     }
