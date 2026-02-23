@@ -46,11 +46,11 @@ public class ScentManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             IncrementSelectedScent(-1);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             IncrementSelectedScent(1);
         }
@@ -85,6 +85,7 @@ public class ScentManager : MonoBehaviour
 
     public void Sniff()
     {
+        Debug.Log("Sniffing");
         int itemIndex = -1;
         int minDistance = int.MaxValue;
         List<Vector2Int> itemPath = null;
